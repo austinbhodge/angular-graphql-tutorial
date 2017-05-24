@@ -5,14 +5,13 @@
 ## We will go through each of these steps
 *If you are reading this because you are stuck, skip to a more helpful section below...*
 
-##### *1. Start Our Project*
-##### *2. Setup Our Apollo Server Flavor (express)*
-##### *3. Connect to our database*
-##### *4. Making a basic GraphQL schema*
-##### *5. Adding Queries to our schema*
-##### *6. Setup The Webpack Config For Our Server*
-##### *7. Introduce Angular Into Our Project*
-##### *8. Setup The Webpack Config For Angular*
+##### *[1. Starting Our Project](#starting-our-project)*
+##### *[2. Setup Our Server](#setup-our-server)*
+##### *[3. Connect to our database](#connect-to-our-database)*
+##### *[4. Making a GraphQL schema](#making-a-graphql-schema)*
+##### *[5. Adding Queries to our schema](#adding-queries-to-our-schema)*
+##### *6. Add Angular Into Our Project*
+##### *7. Setup Our Webpack Config*
 ##### *9. Create a Simple Client App*
 ##### *10. Summary*
 
@@ -47,7 +46,7 @@ Your app structure should look like the above.
 
 ---
 
-##  Setup Our Apollo Server
+##  Setup Our Server
 
 Start by importing our dependencies into the main function
 
@@ -99,7 +98,7 @@ main();
 ```
 Note that we pass our soon to be connected database to the context object when we use the graphQL middleware. This is because data passed into the context can be accessed by our schema resolver functions.
 
-##  Connect to our database (MongoDB)
+##  Connect to our database
 
 Lets write out a function for our app to connect to a database.
 We will also take some variables from our main and aggregate them all to src/server/config.ts.

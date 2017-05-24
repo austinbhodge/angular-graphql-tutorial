@@ -1,18 +1,18 @@
 import { GraphQLSchema } from 'graphql';
 import { makeExecutableSchema } from 'graphql-tools';
 
+
 /* tslint:disable:no-var-requires */
 const modules = [
-  require("./types/geo.type"),
-  require("./types/violation.type"),
-  require("./types/inspection.type"),
-  require("./types/location.type"),
-  require("./queries/location.query")
+  require("./types/animal.type"),
+  require("./queries/animal.query"),
+  require("./mutations/animal.mutation")
 ];
 
 const mainDefs = [`
     schema {
         query: Query
+        mutation: Mutation
     }
 `,
 ];
