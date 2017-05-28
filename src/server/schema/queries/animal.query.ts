@@ -16,9 +16,6 @@ export const resolver = {
       return context.db.collection('animals').find({airborne:true}).toArray();
     },
     getAnimalByName(root, args, context) {
-      console.log(args);
-      console.log({name: args.name});
-      console.log(context.db.collection('animals').findOne({name: args.name}));
       return context.db.collection('animals').findOne({name: args.name});
     },
   },

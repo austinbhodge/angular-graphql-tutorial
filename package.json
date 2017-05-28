@@ -12,7 +12,7 @@
     "test:notify": "npm run test:watch -- --notify",
     "coverage": "npm test -- --coverage",
     "coverage:notify": "npm run coverage -- --watch --notify",
-    "start": "npm run build && node dist/main.js",
+    "start": "npm run build && node dist/server/main.js",
     "start:watch": "concurrently \"npm run build:watch\" \"node-dev dist/main.js\"",
     "preupver": "npm test",
     "upver": "standard-version"

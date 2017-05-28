@@ -6,10 +6,10 @@ var fs = require('fs');
 /* helper function to get into build directory */
 var distPath = function ( name ) {
   if ( undefined === name ) {
-    return path.join('dist');
+    return path.join('dist/server');
   }
 
-  return path.join('dist', name);
+  return path.join('dist/server', name);
 };
 
 var webpack_opts = {

@@ -1,40 +1,24 @@
 import { GraphQLSchema } from 'graphql';
 import { makeExecutableSchema } from 'graphql-tools';
+import * as mutations from './mutations/animal.mutation';
+import * as queries from './queries/animal.query'; 
+import * as types from './types/animal.type';
 
-
-/* tslint:disable:no-var-requires */
-const modules = [
-  require("./types/animal.type"),
-  require("./queries/animal.query"),
-  require("./mutations/animal.mutation")
-];
-
-const mainDefs = [`
+const typeDefs = [`
     schema {
         query: Query
         mutation: Mutation
     }
 `,
+  mutations.typeDef,
+  queries.typeDef,
+  types.typeDef
 ];
 
-const resolvers = modules.reduce((state, m) => {
-  if ( !m.resolver ) {
-    return state;
-  }
-
-  return {
-    ...state,
-    ...m.resolver,
-  };
-}, {});
-
-const typeDefs = mainDefs.concat(modules.map((m) => m.typeDef).filter((res) => !!res));
+const resolvers = {...mutations.resolver, ...queries.resolver};
 
 const Schema: GraphQLSchema = makeExecutableSchema({
   logger: console,
-  resolverValidationOptions: {
-    requireResolversForNonScalar: false,
-  },
   resolvers: resolvers,
   typeDefs: typeDefs,
 });
