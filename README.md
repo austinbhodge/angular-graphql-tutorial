@@ -280,4 +280,10 @@ The [`makeExecutableSchema` function](http://dev.apollodata.com/tools/graphql-to
 
 You are almost ready to start playing around with the server side of our project.
 
-All that's left is setting up our webpack config.
+All that's left is setting up our webpack config, and adding some angular.
+
+---
+
+## Setup Our Webpack Config
+
+lets create `webpack.config.js` in the root folder of our app.
